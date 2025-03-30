@@ -59,10 +59,15 @@
   transition: 0.2s linear;
 }
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1640px) {
+  .hero-section > img:nth-child(3) {
+  bottom: -120px;
+  right: -120px;
+  width: 700px;
+  }
   .hs-content > p:nth-child(1),
   .hs-content > p:nth-child(2) {
-    font-size: 65px;
+    font-size: 55px;
   }
   .hs-content > p:nth-child(3) {
     font-size: 20px;
