@@ -69,7 +69,7 @@
     width: 40%;
   }
   .hac-right {
-    margin: 80px 120px;
+    margin: 100px 0 100px 250px;
   }
   .hac-right > p:nth-child(2),
   .hac-right > p:nth-child(3) {
