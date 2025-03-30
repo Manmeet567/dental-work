@@ -60,14 +60,17 @@
 }
 
 @media only screen and (max-width: 1640px) {
+  .hero-section > img:nth-child(2) {
+   width: 600px;
+  }
   .hero-section > img:nth-child(3) {
-  bottom: -120px;
-  right: -120px;
-  width: 700px;
+    bottom: -120px;
+    right: -120px;
+    width: 700px;
   }
   .hs-content > p:nth-child(1),
   .hs-content > p:nth-child(2) {
-    font-size: 55px;
+    font-size: 60px;
   }
   .hs-content > p:nth-child(3) {
     font-size: 20px;

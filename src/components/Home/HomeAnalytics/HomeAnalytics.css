@@ -66,10 +66,10 @@
 
 @media only screen and (max-width: 1640px) {
   .ha-happy-image {
-    width: 50%;
+    width: 40%;
   }
   .hac-right {
-    margin: 80px;
+    margin: 80px 120px;
   }
   .hac-right > p:nth-child(2),
   .hac-right > p:nth-child(3) {
