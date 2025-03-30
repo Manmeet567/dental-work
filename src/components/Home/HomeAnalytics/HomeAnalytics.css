@@ -73,20 +73,20 @@
   }
   .hac-right > p:nth-child(2),
   .hac-right > p:nth-child(3) {
-    font-size: 50px;
+    font-size: 54px;
   }
   .hac-right > p:nth-child(4) {
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .ha-analytics {
     margin-top: 40px;
   }
   .haa-container > p:nth-child(1) {
-    font-size: 45px;
+    font-size: 50px;
   }
   .haa-container > p:nth-child(2) {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 1240px) {
