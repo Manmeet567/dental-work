@@ -1,0 +1,109 @@
+.home-services {
+  margin: 40px 0;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 40px);
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: background-image 0.5s ease-in-out; /* Smooth transition */
+}
+
+.hs-overlay {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 0.6) 75.74%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  z-index: 1;
+}
+
+.hsv-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 75%;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  width: 722px;
+  margin-bottom: 60px;
+  transition: opacity 0.3s ease-in-out; /* Smooth content transition */
+}
+
+.hsv-content > p:nth-child(1) {
+  font-size: 68px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hsv-content > p:nth-child(2) {
+  font-size: 40px;
+  margin-top: 20px;
+}
+
+.hsv-footer {
+  background: #111b3466;
+  border-top: 0.86px solid #ffffff24;
+  backdrop-filter: blur(23.2px);
+  height: 25%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 50px;
+}
+
+.hsv-active-bar {
+  position: absolute;
+  top: 0;
+  height: 5px;
+  width: 33.3%;
+  background: #00EAFF;
+  border-radius: 10px;
+  transition: left 0.3s ease-in-out;
+}
+
+.hsvf-item {
+  flex: 1;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+  width: 223px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hsvf-item > p:nth-child(1){
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -1.5%;
+}
+.hsvf-item > p:nth-child(2){
+    font-size: 13px;
+    letter-spacing: -1.1%;
+    margin-top: 20px;
+}
+.hsvf-item.active {
+  opacity: 1;
+  font-weight: bold;
+}

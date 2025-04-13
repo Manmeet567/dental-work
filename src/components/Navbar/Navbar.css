@@ -1,0 +1,15 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+  align-items: center;
+}
+.menu-items > a{
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+}

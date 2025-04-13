@@ -3,10 +3,12 @@ import "./HeroSection.css";
 import bg from "../../../assets/bg-3.png";
 import smile from "../../../assets/smile.png";
 import girl from "../../../assets/girl.png";
+import Navbar from "../../Navbar/Navbar";
 
 function HeroSection() {
   return (
     <div className="hero-section container-wrapper">
+      <Navbar />
       <img src={bg} alt="bg" />
       <img src={smile} alt="smile" />
       <img src={girl} alt="girl" />
