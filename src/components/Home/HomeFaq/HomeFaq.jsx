@@ -45,6 +45,7 @@ function HomeFaq() {
 
   return (
     <div className="home-faq">
+      <p>FAQ</p>
       <p>Fearing Dental Treatment?</p>
       <p>Relax, We’ve Got You Covered!</p>
       <div className="hf-faq-section">

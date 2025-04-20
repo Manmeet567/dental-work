@@ -120,8 +120,37 @@
   display: flex;
   align-items: center;
 }
-.fb-menu > a{
+.fb-menu > a {
   margin-right: 30px;
   color: #fff;
   text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 40px 20px;
+  }
+  .f-header > p {
+    font-size: 30px;
+  }
+  .fh-mail {
+    width: 100%;
+  }
+  .f-content {
+    display: block;
+    padding: 0;
+  }
+  .f-content > .fc-box {
+    width: 100%;
+    margin: 0 0px;
+  }
+  .fc-box > p:nth-child(1) {
+    margin-top: 50px;
+  }
+  .f-bar > .fb-menu {
+    display: none;
+  }
+  .f-content > .fc-box:nth-child(1) > img {
+    width: 100px;
+  }
 }

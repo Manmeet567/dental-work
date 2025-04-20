@@ -37,13 +37,20 @@ function HomeServices() {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % services.length);
     }, 3000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -67,20 +74,32 @@ function HomeServices() {
             transition: "left 0.3s ease-in-out",
           }}
         ></div>
-        {services.map((service, index) => (
+
+        {screenWidth < 800 ? (
           <div
-            key={service.id}
-            className={`hsvf-item ${index === activeIndex ? "active" : ""}`}
-            onClick={() => setActiveIndex(index)}
-            style={{
-              opacity: index === activeIndex ? 1 : 0.6,
-              transition: "opacity 0.3s ease-in-out",
-            }}
+            key={services[activeIndex].id}
+            className={`hsvf-item active`}
+            style={{ opacity: 1 }}
           >
-            <p>{service.sub_title}</p>
-            <p>{service.sub_desc}</p>
+            <p>{services[activeIndex].sub_title}</p>
+            <p>{services[activeIndex].sub_desc}</p>
           </div>
-        ))}
+        ) : (
+          services.map((service, index) => (
+            <div
+              key={service.id}
+              className={`hsvf-item ${index === activeIndex ? "active" : ""}`}
+              onClick={() => setActiveIndex(index)}
+              style={{
+                opacity: index === activeIndex ? 1 : 0.6,
+                transition: "opacity 0.3s ease-in-out",
+              }}
+            >
+              <p>{service.sub_title}</p>
+              <p>{service.sub_desc}</p>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
