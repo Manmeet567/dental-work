@@ -1,3 +1,4 @@
+/* Navbar container */
 .navbar {
   position: absolute;
   top: 0;
@@ -6,10 +7,92 @@
   justify-content: space-between;
   padding: 40px 60px;
   align-items: center;
+  z-index: 10;
 }
-.menu-items > a{
-    color: #FFFFFF;
+
+/* Desktop menu links */
+.menu-items > a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: 500;
+}
+
+/* Hide responsive menu on large screens */
+.responsive-menu {
+  display: none;
+}
+
+/* ===================== */
+/* Responsive Styles     */
+/* ===================== */
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .menu-items {
+    display: none;
+  }
+
+  .navbar > img {
+    width: 100px;
+  }
+
+  .responsive-menu {
+    display: block;
+  }
+
+  .rm-menu-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .rmi-icon {
+    font-size: 30px;
+    color: #000;
+  }
+
+  /* Slide-in Menu */
+  .rm-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .rm-menu.open {
+    right: 0;
+  }
+
+  .rm-menu a {
+    color: #222;
     text-decoration: none;
-    margin: 0 20px;
+    font-size: 20px;
+    margin: 20px 0;
     font-weight: 500;
+  }
+
+  .rm-close-icon {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #000;
+  }
 }
