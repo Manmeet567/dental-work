@@ -4,6 +4,7 @@ import HomeAnalytics from "../components/Home/HomeAnalytics/HomeAnalytics";
 import HomeServices from "../components/Home/HomeServices/HomeServices";
 import HomeFaq from "../components/Home/HomeFaq/HomeFaq";
 import Footer from "../components/Footer/Footer";
+import HomeTestimonials from "../components/Home/HomeTestimonials/HomeTestimonials";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <HomeAnalytics />
       <HomeServices />
       <HomeFaq />
+      <HomeTestimonials />
       <Footer />
     </div>
   );

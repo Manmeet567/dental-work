@@ -1,0 +1,122 @@
+.home-testimonials {
+  margin: 40px 0 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #011d2f;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-testimonials > p {
+  font-size: 58px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.ht-slider {
+  margin-top: 30px;
+  max-width: 70%;
+}
+
+.hts-card {
+  max-width: 551px;
+  max-height: 317px;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0px 17px 24px 0px #b2b2b214;
+  padding: 30px;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+.hts-card > p:nth-child(1) {
+  color: #4d4d4d;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.ht-user {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.ht-user > img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.slick-slide > div {
+  margin: 0 20px 40px;
+}
+
+.slick-dots {
+  bottom: -30px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.slick-dots li {
+  margin: 0 10px !important;
+}
+
+.slick-dots li button {
+  width: 30px !important;
+  height: 5px !important;
+  background: #ffffff !important;
+  opacity: 0.3 !important;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  padding: 0 !important;
+}
+
+/* VERY IMPORTANT: REMOVE the black dot */
+.slick-dots li button::before {
+  display: none !important; /* Hides the default black dot */
+  content: none !important;
+}
+
+.slick-dots li.slick-active button {
+  background: #ffffff !important;
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 800px) {
+  .home-testimonials {
+    padding: 20px 20px 40px;
+  }
+  .home-testimonials > p {
+    font-size: 35px;
+  }
+  .ht-slider {
+    width: 100%;
+  }
+
+  .hts-card {
+    max-width: 100%;
+    max-height: auto;
+    padding: 20px 10px;
+    border-radius: 15px;
+  }
+  .slick-dots li button {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  .slick-slide > div {
+    margin: 0 20px 20px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .ht-slider {
+    max-width: 90%;
+  }
+}
