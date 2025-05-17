@@ -44,7 +44,7 @@ function HomeFaq() {
   };
 
   return (
-    <div className="home-faq">
+    <div id="faq" className="home-faq">
       <p>FAQ</p>
       <p>Fearing Dental Treatment?</p>
       <p>Relax, We’ve Got You Covered!</p>

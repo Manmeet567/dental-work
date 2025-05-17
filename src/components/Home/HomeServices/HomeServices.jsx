@@ -56,6 +56,7 @@ function HomeServices() {
   return (
     <div
       className="home-services"
+      id="services"
       style={{
         backgroundImage: `url(${services[activeIndex].image})`,
         transition: "background-image 0.5s ease-in-out",

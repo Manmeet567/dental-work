@@ -1,4 +1,4 @@
-/* Navbar container */
+/* ---------------- Base Styles ---------------- */
 .navbar {
   position: absolute;
   top: 0;
@@ -10,7 +10,6 @@
   z-index: 10;
 }
 
-/* Desktop menu links */
 .menu-items > a {
   color: #ffffff;
   text-decoration: none;
@@ -18,15 +17,11 @@
   font-weight: 500;
 }
 
-/* Hide responsive menu on large screens */
 .responsive-menu {
   display: none;
 }
 
-/* ===================== */
-/* Responsive Styles     */
-/* ===================== */
-
+/* ---------------- Mobile Styles ---------------- */
 @media screen and (max-width: 800px) {
   .navbar {
     padding: 20px;
@@ -44,6 +39,7 @@
     display: block;
   }
 
+  /* Open Menu Icon */
   .rm-menu-icon {
     width: 36px;
     height: 36px;
@@ -53,6 +49,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border: none;
   }
 
   .rmi-icon {
@@ -60,11 +57,11 @@
     color: #000;
   }
 
-  /* Slide-in Menu */
+  /* Drawer Menu */
   .rm-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 80%;
     height: 100vh;
     background-color: #fff;
@@ -73,11 +70,23 @@
     flex-direction: column;
     align-items: center;
     padding: 40px 20px;
-    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    transform: translateX(100%);
+    -webkit-overflow-scrolling: touch;
   }
 
-  .rm-menu.open {
-    right: 0;
+  .rm-menu--anim-in {
+    animation: slideIn 0.3s forwards ease-in-out;
+  }
+
+  .rm-close-icon {
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #000;
+    background: none;
+    border: none;
   }
 
   .rm-menu a {
@@ -88,11 +97,24 @@
     font-weight: 500;
   }
 
-  .rm-close-icon {
-    align-self: flex-end;
-    font-size: 30px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    color: #000;
+  /* Overlay covering 20% */
+  .rm-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
   }
 }

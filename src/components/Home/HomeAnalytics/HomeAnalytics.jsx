@@ -18,7 +18,7 @@ function HomeAnalytics() {
   }, []);
 
   return (
-    <div className="home-analytics">
+    <div id="aboutUs" className="home-analytics">
       <div className="ha-content">
         {isMobileView && (
           <div className="hac-text">

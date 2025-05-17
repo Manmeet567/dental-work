@@ -87,7 +87,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="fc-box">
+        <div className="fc-box" id="contactUs">
           <p>CONTACT</p>
           <div className="ff-mail">
             <MdEmail

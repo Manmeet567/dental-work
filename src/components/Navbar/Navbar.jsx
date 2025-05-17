@@ -1,44 +1,78 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
-import "./Navbar.css";
 import { TbMenuDeep } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
+import "./Navbar.css";
 
-function Navbar() {
+const links = [
+  { label: "HOME", id: "home" },
+  { label: "ABOUT US", id: "aboutUs" },
+  { label: "SERVICES", id: "services" },
+  { label: "FAQs", id: "faq" },
+  { label: "TESTIMONIALS", id: "testimonials" },
+  { label: "CONTACT US", id: "contactUs" },
+];
+
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Lock/unlock scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
+  }, [menuOpen]);
+
   return (
-    <div className="navbar">
+    <header className="navbar">
       <img src={logo} alt="logo" />
-      <div className="menu-items">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT US</a>
-        <a href="#">SERVICES</a>
-        <a href="#">FAQs</a>
-        <a href="#">TESTIMONIALS</a>
-        <a href="#">CONTACT US</a>
-      </div>
 
-      {/* Responsive menu */}
+      {/* Desktop Navigation */}
+      <nav className="menu-items">
+        {links.map((link) => (
+          <a key={link.id} href={`#${link.id}`}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Mobile Menu */}
       <div className="responsive-menu">
-        <div className="rm-menu-icon" onClick={() => setMenuOpen(true)}>
+        <button
+          aria-label="Open menu"
+          className="rm-menu-icon"
+          onClick={() => setMenuOpen(true)}
+        >
           <TbMenuDeep className="rmi-icon" />
-        </div>
+        </button>
 
-        <div className={`rm-menu ${menuOpen ? "open" : ""}`}>
-          <div className="rm-close-icon" onClick={() => setMenuOpen(false)}>
-            <IoClose />
-          </div>
-          <a href="#">HOME</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">SERVICES</a>
-          <a href="#">FAQs</a>
-          <a href="#">TESTIMONIALS</a>
-          <a href="#">CONTACT US</a>
-        </div>
+        {menuOpen && (
+          <>
+            {/* Blur Overlay (20% width) */}
+            <div className="rm-overlay" onClick={() => setMenuOpen(false)} />
+
+            {/* Slide-in Drawer */}
+            <nav className="rm-menu rm-menu--anim-in">
+              <button
+                aria-label="Close menu"
+                className="rm-close-icon"
+                onClick={() => setMenuOpen(false)}
+              >
+                <IoClose />
+              </button>
+
+              {links.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </>
+        )}
       </div>
-    </div>
+    </header>
   );
 }
-
-export default Navbar;

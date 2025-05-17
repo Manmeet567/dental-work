@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "./HomeTestimonials.css";
 import "slick-carousel/slick/slick.css";
@@ -40,9 +40,22 @@ function StarRating({ count }) {
   );
 }
 
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return width;
+}
+
 function TestimonialCard({ testimonial }) {
   const [showFull, setShowFull] = useState(false);
-  const maxLength = 300;
+  const width = useWindowWidth();
+  const maxLength = width <= 500 ? 150 : 300;
 
   const shouldTrim = testimonial.review.length > maxLength;
   const trimmedText = testimonial.review.slice(0, maxLength);
@@ -92,7 +105,7 @@ function HomeTestimonials() {
   };
 
   return (
-    <div className="home-testimonials">
+    <div className="home-testimonials" id="testimonials">
       <p>Trusted By Families, from Kids To Your Grandparents</p>
       <div className="ht-slider">
         <Slider {...settings}>
