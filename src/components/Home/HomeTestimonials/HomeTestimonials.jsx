@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "./HomeTestimonials.css";
 import "slick-carousel/slick/slick.css";
@@ -55,25 +55,39 @@ function useWindowWidth() {
 function TestimonialCard({ testimonial }) {
   const [showFull, setShowFull] = useState(false);
   const width = useWindowWidth();
-  const maxLength = width <= 500 ? 150 : 300;
+  const maxLength = width <= 500 ? 150 : 200;
+  const reviewBoxRef = useRef(null);
 
   const shouldTrim = testimonial.review.length > maxLength;
   const trimmedText = testimonial.review.slice(0, maxLength);
 
+  // Scroll to top whenever 'showFull' changes to true
+  useEffect(() => {
+    if (showFull && reviewBoxRef.current) {
+      reviewBoxRef.current.scrollTop = 0;
+    }
+  }, [showFull]);
+
   return (
     <div className="hts-card">
       <StarRating count={testimonial.stars} />
-      <p>
-        {showFull || !shouldTrim ? testimonial.review : `${trimmedText}...`}
-        {shouldTrim && (
-          <span
-            className="read-more"
-            onClick={() => setShowFull((prev) => !prev)}
-          >
-            {showFull ? " Show less" : " Read more"}
-          </span>
-        )}
-      </p>
+      <div
+        className={`hts-review-box ${showFull ? "expanded" : ""}`}
+        ref={reviewBoxRef}
+      >
+        <p>
+          {showFull || !shouldTrim ? testimonial.review : `${trimmedText}…`}
+          {shouldTrim && (
+            <span
+              className="read-more"
+              onClick={() => setShowFull((prev) => !prev)}
+            >
+              {showFull ? " Show less" : " Read more"}
+            </span>
+          )}
+        </p>
+      </div>
+
       <div className="ht-user">
         <img src={testimonial.img} alt={testimonial.name} />
         <div className="ht-user-info">

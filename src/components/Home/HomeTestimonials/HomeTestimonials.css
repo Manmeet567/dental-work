@@ -34,6 +34,25 @@
   flex-direction: column;
   align-items: center;
 }
+.hts-review-box {
+  flex: 1;
+  overflow: hidden; /* hide overflow until expanded */
+  margin-bottom: 10px;
+}
+
+/* when user clicks "Read more" */
+.hts-review-box.expanded {
+  overflow-y: auto; /* enable scroll */
+}
+
+/* hide scrollbar */
+.hts-review-box.expanded::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.hts-review-box.expanded {
+  scrollbar-width: none; /* Firefox */
+}
 .hts-card > p:nth-child(1) {
   color: #4d4d4d;
   font-size: 18px;
