@@ -5,34 +5,34 @@ import { LuMinus } from "react-icons/lu";
 
 const faqData = [
   {
-    question: "What is Webflow and why is it the best website builder?",
+    question: "How often should I visit the dentist?",
     answer:
-      "Webflow is a visual web design tool that lets you build responsive websites without writing code. It's powerful because it gives full control over design, layout, and animations.",
+      "It's generally recommended to visit the dentist every six months for a check-up and cleaning.",
   },
   {
-    question: "Is dental treatment painful?",
+    question: "What services do you offer?",
     answer:
-      "With modern techniques and anesthetics, dental treatments are now nearly painless. We ensure your comfort throughout the entire process.",
+      "We provide a full range of dental services including preventive care, fillings, root canals, crowns, implants, cosmetic dentistry, and more.",
   },
   {
-    question: "Do I need to visit the dentist regularly?",
+    question: "Do you treat children and families?",
     answer:
-      "Yes, regular check-ups help prevent bigger problems. We recommend a visit every 6 months for optimal oral health.",
+      "Yes, we offer dental care for patients of all ages, including children. Our clinic is family-friendly and equipped to handle pediatric needs.",
   },
   {
-    question: "What if I have dental anxiety?",
+    question: "Is teeth whitening safe and effective?",
     answer:
-      "We offer gentle care, calming environments, and sedation options to help you feel relaxed and comfortable.",
+      "Yes, professional teeth whitening is a safe and effective way to brighten your smile under the supervision of a dentist.",
   },
   {
-    question: "What if I have dental anxiety?",
+    question: "How do I maintain good oral hygiene at home?",
     answer:
-      "We offer gentle care, calming environments, and sedation options to help you feel relaxed and comfortable.",
+      "Brush your teeth twice a day, floss daily, use mouthwash, avoid sugary foods, and maintain regular dental check-ups to keep your mouth healthy.",
   },
   {
-    question: "What if I have dental anxiety?",
+    question: "What should I do in a dental emergency?",
     answer:
-      "We offer gentle care, calming environments, and sedation options to help you feel relaxed and comfortable.",
+      "In case of a dental emergency such as a knocked-out tooth, severe pain, or bleeding, contact our office immediately. We offer emergency dental services to provide prompt care.",
   },
 ];
 
@@ -40,7 +40,7 @@ function HomeFaq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   const toggleQuestion = (index) => {
-    setOpenIndex(prev => (prev === index ? null : index));
+    setOpenIndex((prev) => (prev === index ? null : index));
   };
 
   return (
@@ -59,9 +59,7 @@ function HomeFaq() {
               <p>{faq.question}</p>
               {openIndex === index && <p>{faq.answer}</p>}
             </div>
-            <div className="hfq-open">
-              {openIndex !== index && <FiPlus />}
-            </div>
+            <div className="hfq-open">{openIndex !== index && <FiPlus />}</div>
             <div className="hfq-close">
               {openIndex === index && <LuMinus />}
             </div>
