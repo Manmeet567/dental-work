@@ -126,11 +126,11 @@ function Footer() {
       </div>
       <div className="f-bar">
         <div className="fb-menu">
-          <a href="#">HOME</a>
-          <a href="#">ABOUT US</a>
-          <a href="#">SERVICE</a>
-          <a href="#">FAQ</a>
-          <a href="#">TESTIMONIALS</a>
+          <a href="#home">HOME</a>
+          <a href="#aboutUs">ABOUT US</a>
+          <a href="#services">SERVICE</a>
+          <a href="#faq">FAQ</a>
+          <a href="#testimonials">TESTIMONIALS</a>
         </div>
         <p>Copyright © 2025 • UniqueDentalCare</p>
       </div>
