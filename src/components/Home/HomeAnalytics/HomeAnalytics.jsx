@@ -43,19 +43,19 @@ function HomeAnalytics() {
 
           <div className="ha-analytics">
             <div className="haa-container">
-              <p>20+</p>
+              <p>17+</p>
               <p>Years of Experience</p>
             </div>
             <div className="haa-container">
-              <p>750+</p>
+              <p>1000+</p>
               <p>Happy Clients</p>
             </div>
             <div className="haa-container">
-              <p>98%</p>
-              <p>Satisfaction Rate</p>
+              <p>100%</p>
+              <p>Transparent Rate</p>
             </div>
             <div className="haa-container">
-              <p>700+</p>
+              <p>100+</p>
               <p>Dental Implants</p>
             </div>
           </div>

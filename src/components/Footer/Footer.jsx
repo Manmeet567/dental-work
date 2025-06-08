@@ -22,6 +22,12 @@ function Footer() {
             Unique Dental Care makes oral health hassle-free with a
             user-friendly platform for booking dental appointments.
           </p>
+          <p style={{ fontSize: "14px" }}>
+            <i>
+              "Please note that the clinic is closed on{" "}
+              <strong>Tuesdays</strong>."
+            </i>
+          </p>
         </div>
         <div className="fc-box">
           <p>LOCATION</p>
@@ -30,11 +36,11 @@ function Footer() {
               style={{
                 color: "#fff",
                 opacity: "60%",
-                fontSize: "24px",
+                fontSize: "30px",
                 marginRight: "10px",
               }}
             />
-            <a href="">
+            <a href="https://maps.app.goo.gl/oPtsNR6yEKet6AXb7" target="_blank">
               Clinic 1 :<br />S - 97, Vishwas Park, Sector - 3, Dwarka, New
               Delhi - 59
             </a>
@@ -44,11 +50,14 @@ function Footer() {
               style={{
                 color: "#fff",
                 opacity: "60%",
-                fontSize: "24px",
+                fontSize: "30px",
                 marginRight: "10px",
               }}
             />
-            <a href="">
+            <a
+              href="https://maps.app.goo.gl/zhtBqVzoReS3rJQZ6?g_st=aw"
+              target="_blank"
+            >
               Clinic 2 :<br />D - Block, Kothi No. 122, Sector - 8, New Delhi -
               77
             </a>
@@ -98,8 +107,8 @@ function Footer() {
                 marginRight: "10px",
               }}
             />
-            <a href="mailto:dr_amitverma@yahoo.co.in">
-              dr_amitverma@yahoo.co.in
+            <a href="mailto:amitverma.dentist@gmail.com">
+              amitverma.dentist@gmail.com
             </a>
           </div>
           <div className="ff-conatct">

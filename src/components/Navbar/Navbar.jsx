@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { TbMenuDeep } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
+import publiclogo from "../../assets/publiclogo.png";
 import "./Navbar.css";
 
 const links = [
@@ -59,7 +60,7 @@ export default function Navbar() {
               >
                 <IoClose />
               </button>
-
+              <img style={{marginBottom:"30px"}} src={publiclogo} alt="logo" />
               {links.map((link) => (
                 <a
                   key={link.id}

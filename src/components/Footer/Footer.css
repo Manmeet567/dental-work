@@ -92,6 +92,7 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  flex: 1;
   line-height: 20px;
 }
 .ft-time,
